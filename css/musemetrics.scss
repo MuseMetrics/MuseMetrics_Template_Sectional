@@ -1,0 +1,302 @@
+/*Variables*/
+$red: #F00452;
+$gray: #6C6C6C;
+$darkgray: #2B2B2B;
+$blue: #B8F0F0;
+$white: #FFFFFF;
+$bar: #F2F2F2;
+$purple: #AF4ADF;
+$lightpurple: #EFA4E1;
+
+/*Mixins*/
+@mixin fade {
+  transition: all 450ms ease-in-out;
+}
+
+/*Universal Selector*/
+* {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*Window Selector*/
+.grid {
+  width: 90%;
+  margin: 0 5%;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+/*Row Selector*/
+.row {
+  width: 100%;
+  padding: 5px;
+  display: table;
+}
+
+/*Column Selectors*/
+.col-1 {
+  width: 6.5%;
+  display: table-cell;
+}
+.col-2 {
+  width: 15%;
+  display: table-cell;
+}
+.col-3 {
+  width: 23.5%;
+  display: table-cell;
+}
+.col-4 {
+  width: 32%;
+  display: table-cell;
+}
+.col-5 {
+  width: 40.5%;
+  display: table-cell;
+}
+.col-6 {
+  width: 49%;
+  display: table-cell;
+}
+.col-7 {
+  width: 57.5%;
+  display: table-cell;
+}
+.col-8 {
+  width: 66%;
+  display: table-cell;
+}
+.col-9 {
+  width: 74.5%;
+  display: table-cell;
+}
+.col-10 {
+  width: 83%;
+  display: table-cell;
+}
+.col-11 {
+  width: 91.5%;
+  display: table-cell;
+}
+.col-12 {
+  width: 100%;
+  display: table-cell;
+}
+
+/*Alignment Selectors*/
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.justify {
+  text-align: justify;
+}
+
+/*Float and Clears*/
+.float_left {
+  float: left;
+  margin-left: 10%;
+}
+.float_right {
+  float: right;
+  margin-right: 10%;
+}
+.clear {
+  clear: both;
+}
+
+/*Margins*/
+.header {
+  padding-top: 25px;
+}
+
+/*Padding Measurements*/
+.pad {
+  padding: 5px;
+}
+
+/*Invisible*/
+.invisible {
+  visibility: hidden;
+}
+
+/*Display Styles*/
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.inline_block {
+  display: inline-block;
+}
+
+/*Fixed Top Nav*/
+nav {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+nav {
+  position: fixed;
+  margin-top: 0%;
+  padding: 0;
+  background: white;
+  height: 50px;
+  width: 100%;
+  z-index: 9000;
+  border-bottom: 1px solid #CCCCCC;
+  ul{
+    li {
+      display: inline-block;
+      @include fade;
+      padding: 0 5px;
+      color: $gray;
+      a {
+        @include fade;       
+        display: block; 
+        padding: 0 5px;
+        color: $gray;
+        &:hover {
+          @include fade;
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+
+#title a {
+  @include fade;
+  font-weight: bolder;
+  font-size: 1.15em;
+  color: $blue;
+  line-height: 50px;
+
+  &:hover {
+    @include fade;
+    color: $gray;
+  }
+}
+
+.toggle {
+  @include fade;
+  display: none;
+  color: $gray;
+  font-size: 1.15em;
+  &:hover {
+    @include fade;
+    cursor: pointer;
+    color: $blue;
+  }
+}
+
+.musemetrics {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/*Media Query*/
+@media (max-width: 700px) {
+
+  .grid {
+    width: 96%;
+    margin: 0 2%;
+    display: block;
+    border-collapse: separate;
+    border-spacing: 15px;
+  }
+
+  .row {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .col-1, .col-2, .col-3,
+  .col-4, .col-5, .col-6,
+  .col-7, .col-8, .col-9,
+  .col-10, .col-11, .col-12{
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  nav {
+    position: fixed;
+    margin-top: 0%;
+    padding: 0;
+    background: white;
+    height: 50px;
+    width: 100%;
+    z-index: 9000;
+    border-bottom: 1px solid #CCCCCC;
+    line-height: 50px;
+  }
+
+  .toggle {
+    display: block;
+    float: right;
+    color: $gray;
+  }
+  
+  ul {
+    display: none;
+  }
+  
+  li {
+    text-align: center;
+    background: $white;
+    width: 100%;
+    border: 1px solid #CCCCCC;
+  }
+
+  #title a {
+    display: none;
+  }
+
+  .musemetrics {
+    display: block;
+  }
+
+
+
+  h1 {
+    font-size: 1.75em;
+  }
+  h2 {
+    font-size: 1.35em;
+  }
+  h3 {
+    font-size: 1.15em;
+  }
+  h4 {
+    font-size: 0.95em;
+  }
+  p {
+    font-size: 0.85em;
+  }
+  span {
+    font-size: 0.85em;
+  }
+
+
+  
+}

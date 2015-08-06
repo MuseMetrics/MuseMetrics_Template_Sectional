@@ -1,0 +1,78 @@
+/*Custom CSS*/
+
+/*Mixins*/
+@mixin fade {
+  transition: all 450ms ease-in-out;
+}
+
+/*Variables*/
+$red: #F00452;
+$gray: #6C6C6C;
+$darkgray: #2B2B2B;
+$blue: #B8F0F0;
+$white: #FFFFFF;
+$bar: #F2F2F2;
+$purple: #AF4ADF;
+$lightpurple: #EFA4E1;
+$button_color: lighten(#501f7f, 20%);
+
+/*Body Styles*/
+body {
+	font-family: "Kalam", "Quintessential", sans-serif;
+	font-weight: lighter;
+	background: linear-gradient(to top right, darken($lightpurple, 5%), $lightpurple, lighten($lightpurple, 5%), lighten($lightpurple, 10%));
+	color: $white;
+	a {
+		@include fade;
+		color: $blue;
+		text-decoration: none;
+
+		&:hover {
+			@include fade;
+			color: $purple;
+		}
+	}
+	ul {
+		list-style-type: none;
+	}
+}
+
+/*Header Styles*/
+h1 {
+  color: $purple;
+  text-shadow: 3px 2px 2px darken($purple, 20%);
+}
+h2 {
+  color: $red;
+}
+h3 {
+  color: $red;
+}
+
+/*Custom Styles*/
+/*Button*/
+button {
+  background: $button_color;
+  color: $white;
+  text-decoration: none;
+  border: 5px solid $button_color;
+  border-radius: 8px;
+  box-shadow: 0px 6px 0px darken($button_color, 20%);
+  
+  &:active {
+    box-shadow: 0px 2px 0px darken($button_color, 20%);
+    transform: translateY(4px);
+  }
+  
+  &:focus {
+    outline: 0;
+  }
+
+  a {
+  	color: $white;
+
+  	&:hover {
+  		color: $white;
+  	}
+  }
+}

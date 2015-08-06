@@ -1,0 +1,50 @@
+/*Custom CSS*/
+/*Mixins*/
+/*Variables*/
+/*Body Styles*/
+body {
+  font-family: "Kalam", "Quintessential", sans-serif;
+  font-weight: lighter;
+  background: linear-gradient(to top right, #eb8eda, #EFA4E1, #f3bae8, #f7cfef);
+  color: #FFFFFF; }
+  body a {
+    transition: all 450ms ease-in-out;
+    color: #B8F0F0;
+    text-decoration: none; }
+    body a:hover {
+      transition: all 450ms ease-in-out;
+      color: #AF4ADF; }
+  body ul {
+    list-style-type: none; }
+
+/*Header Styles*/
+h1 {
+  color: #AF4ADF;
+  text-shadow: 3px 2px 2px #7a1da6; }
+
+h2 {
+  color: #F00452; }
+
+h3 {
+  color: #F00452; }
+
+/*Custom Styles*/
+/*Button*/
+button {
+  background: #8436ce;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: 5px solid #8436ce;
+  border-radius: 8px;
+  box-shadow: 0px 6px 0px #501f7f; }
+  button:active {
+    box-shadow: 0px 2px 0px #501f7f;
+    transform: translateY(4px); }
+  button:focus {
+    outline: 0; }
+  button a {
+    color: #FFFFFF; }
+    button a:hover {
+      color: #FFFFFF; }
+
+/*# sourceMappingURL=custom.css.map */
